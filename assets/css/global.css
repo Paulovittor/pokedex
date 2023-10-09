@@ -1,0 +1,58 @@
+/*import da font ROBOTO do google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;0,700;1,300&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.content h1 {
+  margin: 0;;
+}
+
+.pokemons { /*lista geral de cards dos pokemons*/
+  display: grid; /*definindo a lista ordenada como um elemento de grade*/
+  grid-template-columns: 1fr 1fr; /*definindo o elemento de grade com um template de colunas divididos em duas frações (fr) o que significa que serão duas colunas que divididas em tamanhos iguais de tela*/
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pokemon-list { /*card do pokemon*/
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  padding: 2rem 2rem;
+  background-color: #14d0b0;
+  color: white;
+  border-radius: 1rem;
+}
+
+.pokemon-list .number {
+   color: black;
+   text-align: right;
+   opacity: 0.3;
+}
+
+.pokemon-list .types { /*poderes do pokemom*/
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.pokemon-list img { /*imagem do pokemom*/
+  max-width: 100%; /*ajustando para que o elemento img não ultrapasse o tamanho do elemento pai, neste caso o conteiner de section content e consecutivamente a lista ordenada dos pokemons*/
+  height: auto;
+  align-self: flex-end;
+}
+
+.pokemon-list .powers {
+  display: flex;
+  flex-direction: none;
+}
+
+
