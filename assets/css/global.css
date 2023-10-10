@@ -6,8 +6,24 @@
   box-sizing: border-box;
 }
 
-.content {
+body {
+  background-color: #eeecec;
+}
+
+.content { /*section geral*/
   padding: 1rem;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  border-radius: 1.5rem;
+}
+
+@media screen and (min-width: 992px) {
+  .content {
+    max-width: 992px;
+    margin: auto;
+  }
 }
 
 .content h1 {
@@ -16,17 +32,42 @@
 
 .pokemons { /*lista geral de cards dos pokemons*/
   display: grid; /*definindo a lista ordenada como um elemento de grade*/
-  grid-template-columns: 1fr 1fr; /*definindo o elemento de grade com um template de colunas divididos em duas frações (fr) o que significa que serão duas colunas que divididas em tamanhos iguais de tela*/
+  grid-template-columns: 1fr; /*definindo o elemento de grade com um template de colunas divididos em duas frações (fr) o que significa que serão duas colunas que divididas em tamanhos iguais de tela
+  
+  OBS: após a utilização das media querys para responsividade no desktop, esta classe ficou com 1 coluna, sendo adcionadas conforme aumento de tela, como pode-se ver nas medias abaixo*/
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-right: 0;
+}
+
+/* MEDIA QUERYS:
+construindo a adaptação de tela a partir do seletor pokemon, o identicador da lista, que se inicia com tela e conforme resolução e tamanho de tela vai aumentando até chegar em 4 cards em telas desktops, evitando sobrescrever pouco css*/
+@media screen and (min-width: 380px) {
+  .pokemons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 576px) {
+  .pokemons {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pokemons {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 992px) {
+  .pokemons {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .pokemon-list { /*card do pokemon*/
   display: flex;
   flex-direction: column;
-  margin: 0.5rem;
-  padding: 2rem 2rem;
+  margin: 0.2rem;
+  padding: 0.650rem;
   background-color: #14d0b0;
   color: white;
   border-radius: 1rem;
@@ -36,23 +77,39 @@
    color: black;
    text-align: right;
    opacity: 0.3;
+   font-size: 0.700rem;
 }
 
-.pokemon-list .types { /*poderes do pokemom*/
+.pokemon-list .name {
+  margin-bottom: 0;
+}
+
+.pokemon-list .powers .types { /*poderes do pokemom*/
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
+.pokemon-list .powers .types .type{
+  background-color: #61e1ca;
+  color: white;
+  padding: 0.20rem 0.30rem;
+  margin: 0.300rem;
+  font-size: 0.700rem;
+  border-radius: 1rem;
+}
+
 .pokemon-list img { /*imagem do pokemom*/
   max-width: 100%; /*ajustando para que o elemento img não ultrapasse o tamanho do elemento pai, neste caso o conteiner de section content e consecutivamente a lista ordenada dos pokemons*/
-  height: auto;
+  height: 90px;
   align-self: flex-end;
 }
 
 .pokemon-list .powers {
   display: flex;
-  flex-direction: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
